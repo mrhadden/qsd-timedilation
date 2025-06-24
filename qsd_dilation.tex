@@ -203,7 +203,7 @@ The resulting equation matches observed effects—including GPS clock offsets an
 
 \section{Introduction}
 
-Time dilation is one of the most well-known predictions of modern physics, traditionally interpreted as a consequence of Lorentz invariance and spacetime geometry. From the earliest formulations of the Lorentz transformation to Einstein’s postulates of special\cite{einstein19o5} and general relativity \cite{einstein1915}, the slowing of time due to velocity or gravitational potential has been embedded into the mathematical structure of coordinate systems and metric curvature. Despite its experimental confirmation—such as through the Global Positioning System (GPS)~\cite{ashby-gps} and relativistic muon lifetime extension~\cite{bailey-muon}—the physical origin of time dilation remains undefined. The phenomenon is typically accepted as a geometric artifact rather than a causally derived result.
+Time dilation is one of the most well-known predictions of modern physics, traditionally interpreted as a consequence of Lorentz invariance and spacetime geometry. From the earliest formulations of the Lorentz transformation to Einstein’s postulates of special\cite{einstein1905} and general relativity \cite{einstein1915}, the slowing of time due to velocity or gravitational potential has been embedded into the mathematical structure of coordinate systems and metric curvature. Despite its experimental confirmation—such as through the Global Positioning System (GPS)~\cite{ashby-gps} and relativistic muon lifetime extension~\cite{bailey-muon}—the physical origin of time dilation remains undefined. The phenomenon is typically accepted as a geometric artifact rather than a causally derived result.
 
 In this work, we present a first-principles derivation of time dilation using the framework of Quantum Substrate Dynamics (QSD)~\cite{bush2025}. QSD is a Lorentz-invariant, coherence-based field theory in which time, mass, and quantization emerge from causal interactions within a conserved physical substrate. This substrate supports two orthogonal propagation modes: a scalar coherence recovery velocity \( c_s \), which governs phase restoration pacing, and a transverse coherence spread velocity \( c_t \), which determines spatial coherence support geometry. In this framework, time is not an abstract coordinate axis, but the interval required for local substrate recovery following energy offload~\cite{bush-planck-2025}. This approach follows the same structural logic used to derive Planck’s constant in prior work, where \( \hbar \) was shown to arise from the ratio of transverse to scalar coherence dynamics. That result established the substrate’s role in setting quantization thresholds; here, we apply those principles to the pacing behavior that defines time.
 
@@ -222,7 +222,7 @@ This manuscript was developed through a combination of theoretical derivation, c
 In support of the editorial process, generative AI tools—specifically OpenAI's ChatGPT (version GPT-4o, 2025)—were used to assist in:
 \begin{itemize}
     \item Generating illustrative figures based on the author’s conceptual framework, with iterative refinement to ensure fidelity to the substrate-based dynamics of the model,
-    \item Cross-referencing related scientific concepts to improve contextual alignment and clarity,
+    \item Researching, validating, and cross-referencing related scientific concepts to improve accuracy, contextual alignment, and clarity,
     \item Summarizing and formatting externally sourced material already selected by the author.
 \end{itemize}
 
@@ -475,9 +475,26 @@ In QSD, this effect arises from scalar coherence delay due to the saturation of 
 
 For a muon velocity of \( v = 0.999c \), QSD predicts:
 \[
-\tau_{\text{tick}}^{\text{QSD}} = \frac{L_{\text{coh}}}{\sqrt{c^2 - v^2}} = t_0 \cdot \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}} \approx 22.366 \, t_0,
+\tau_{\text{tick}}^{\text{QSD}} = t_0 \cdot \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}} \approx 22.366 \, t_0,
 \]
-which matches the observed lifetime extension within experimental uncertainty. This agreement demonstrates that high-velocity time dilation is a natural consequence of substrate strain and bandwidth competition, requiring no geometric or postulated relativistic transformation.
+where \( t_0 = \frac{L_{\text{coh}}}{c_s} \) is the rest-frame coherence pacing interval, which matches the observed lifetime extension within experimental uncertainty. This agreement demonstrates that high-velocity time dilation is a natural consequence of substrate strain and bandwidth competition, requiring no geometric or postulated relativistic transformation.
+
+\section[\appendixname~\thesection]{}
+\subsection[\appendixname~\thesubsection]{Implications}
+
+\subsubsection{No Inertial Time Frame}
+
+In the QSD framework, time is defined as a local pacing delay determined by scalar coherence recovery:
+\[
+\tau(x) = \frac{L_{\text{coh}}(x)}{c_s}
+\]
+Because Earth resides within its own gravitational well and carries motion relative to the substrate, the local coherence field is deformed. This deformation alters the pacing interval, meaning that the time measured on Earth, \( T_{\text{Earth}} \), is not representative of an undeformed or global substrate time, \( T_{\text{universal}} \)—if such a construct even exists.
+
+This is not merely a theoretical claim. The existence of even a single confirmed instance of time dilation—whether due to motion (e.g., muons) or gravity (e.g., GPS clocks)—proves that time is experienced differently depending on the observer’s local substrate conditions. Relativity teaches that no inertial frame is privileged in space. QSD extends this to time: no temporal frame is privileged either.
+
+This principle carries deep consequences for cosmological interpretation. Measurements of redshift, temporal baselines, or expansion age all assume synchronized timing across the cosmos. Yet in QSD, and hinted in GR, such timing is structurally local—pacing is conserved in the substrate, but not uniform in expression. Every timing observation is made from within a coherence field shaped by the observer’s own gravitational and kinematic distortion.
+
+While this work focuses on local dilation effects, the broader implications for cosmology—especially the interpretation of astronomical time signals—will be explored in future publications.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
