@@ -70,12 +70,12 @@
 %=================================================================
 % Add packages and commands here. The following packages are loaded in our class file: fontenc, inputenc, calc, indentfirst, fancyhdr, graphicx, epstopdf, lastpage, ifthen, float, amsmath, amssymb, lineno, setspace, enumitem, mathpazo, booktabs, titlesec, etoolbox, tabto, xcolor, colortbl, soul, multirow, microtype, tikz, totcount, changepage, attrib, upgreek, array, tabularx, pbox, ragged2e, tocloft, marginnote, marginfix, enotez, amsthm, natbib, hyperref, cleveref, scrextend, url, geometry, newfloat, caption, draftwatermark, seqsplit
 % cleveref: load \crefname definitions after \begin{document}
-
+%\usepackage{subfigure}
+\usepackage{subcaption}
 \usepackage{tikz}
 \usetikzlibrary{angles, quotes}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.17}
-
 %=================================================================
 % Please use the following mathematics environments: Theorem, Lemma, Corollary, Proposition, Characterization, Property, Problem, Example, ExamplesandDefinitions, Hypothesis, Remark, Definition, Notation, Assumption
 %% For proofs, please use the proof environment (the amsthm package is loaded by the MDPI class).
@@ -143,7 +143,7 @@ $^{1}$ \quad Hadden Technologies Corporation; mbush@haddentechnologies.com\\
 \abstract{Time dilation is a well-established relativistic effect, yet its physical origin remains undefined within traditional geometric frameworks. In this work, we derive time dilation from first principles using the Quantum Substrate Dynamics (QSD) model, where time emerges as a quantized delay associated with local phase coherence recovery. In this view, each region of space is characterized by a coherence support length \texorpdfstring{\( L_{\text{coh}} \)}, and time flows at a rate determined by the scalar recovery speed \texorpdfstring{\( c_s \)}:
 \texorpdfstring{\[
 \tau(x) = \frac{L_{\text{coh}}(x)}{c_s}
-\]}
+\]}\\
 Gravitational dilation arises from stretch in the coherence field near a mass-phase, while kinematic effects emerge from projection of motion into the substrate's scalar recovery bandwidth. Together, these mechanisms yield a unified expression for time dilation without reference to coordinate transformations or invariant light speed.
 The resulting equation matches observed effects—including GPS clock offsets and muon lifetime extension—using only physically interpretable substrate terms. This approach replaces abstract geometry with a conserved coherence field, providing the first axiom-free, mechanical explanation of relativistic time delay. In doing so, QSD reframes time as a dynamic, field-based phenomenon grounded in substrate deformation rather than observation.}
 
@@ -246,7 +246,7 @@ This mechanism reinterprets time dilation not as a coordinate transformation, bu
 
 \subsection{Gradient Effects and the Stretching of Coherence Support}
 
-In addition to motion-induced delay, QSD predicts that gravitational dilation arises from geometric deformation of the coherence zone. As a system moves into a region of lower curvature (e.g., higher altitude), the transverse coherence support region stretches due to the weakening of local field tension. The coherence area \( L_{\text{coh}}(r)^2 \) expands, increasing the scalar recovery path and thus the duration of each tick.
+In addition to motion-induced delay, QSD predicts that gravitational dilation arises from geometric deformation of the coherence zone. As a system enters a region of reduced gravitational curvature, the substrate's transverse coherence zone expands in response to the diminished field tension. The coherence area \( L_{\text{coh}}(r)^2 \) expands, increasing the scalar recovery path and thus the duration of each tick.
 
 Importantly, this effect is not due to gravitational ``time warping'' but to a real change in substrate geometry required to maintain coherence across a curved field. The result is an increase in scalar delay that mirrors gravitational redshift. The final form of the time dilation equation fuses both of these contributions—projected motion tension and geometric support distortion—into a unified, conservation-respecting expression.
 
@@ -390,18 +390,82 @@ which is now a fully derived result, requiring no geometric curvature or postula
 
 \subsubsection{Unified Time Dilation Law}
 
-The total dilation experienced by a system is the product of motion-induced scalar delay and gravitationally induced coherence stretch:
+The total dilation experienced by a system is the product of motion-induced scalar delay and gravitationally induced coherence stretch, Figure \ref{fig:coherence-comparison}:
 \begin{equation}
 \tau(v, r) = \frac{L_{\text{coh}}(r)}{c_s} \cdot \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}
 = \frac{L_0 \left(1 + \frac{GM L_0^2}{2r}\right)}{c_s} \cdot \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}.
 \end{equation}
 This equation unifies relativistic and gravitational dilation as structural outcomes of coherence dynamics in the substrate.
 
+
+
+\begin{figure}[ht]
+\centering
+
+% Left diagram
+\begin{minipage}[b]{0.45\textwidth}
+\centering
+%\subcaptionbox{Moderate motion: $v < c$, significant $c_s$}
+{
+\label{fig:coh-triangle-1}
+\begin{tikzpicture}[scale=2.2, thick]
+\node at (0.7,1.5) {\textit{Moderate motion: $v < c$, significant $c_s$}};
+\draw[->] (0,0) -- (1.2,0) node[below right] {$v$};
+\draw[->] (0,0) -- (0,1.2) node[left] {$c_s$};
+\draw[->] (0,0) -- (1.2,1.2) node[above right] {$c$};
+\draw[dashed] (1.2,1.2) -- (1.2,0);
+\draw[dashed] (1.2,1.2) -- (0,1.2);
+\draw (0.12,0) -- (0.12,0.12) -- (0,0.12);
+\node at (0.2,0.07) {$\theta$};
+\end{tikzpicture}
+}
+\end{minipage}
+\hfill
+% Right diagram
+\begin{minipage}[b]{0.45\textwidth}
+\centering
+%\subcaptionbox{Relativistic limit: $v \to c$, $c_s \to 0$ \label{fig:coh-triangle-2}}
+{
+\label{fig:coh-triangle-2}
+\begin{tikzpicture}[scale=2.2, thick]
+\node at (0.8,0.6) {\textit{Relativistic limit: $v \to c$, $c_s \to 0$}};
+\draw[->] (0,0) -- (1.8,0) node[below right] {$v \approx c$};
+\draw[->] (0,0) -- (0,0.3) node[left] {$c_s \to 0$};
+\draw[->] (0,0) -- (1.8,0.3) node[above right] {$c$};
+\draw[dashed] (1.8,0.3) -- (1.8,0);
+\draw[dashed] (1.8,0.3) -- (0,0.3);
+\draw (0.12,0) -- (0.12,0.12) -- (0,0.12);
+\node at (0.3,-0.08) {$\theta \to 0$};
+\end{tikzpicture}
+}
+\end{minipage}
+
+\caption{QSD projection triangle comparisons. As velocity increases, coherence budget is increasingly diverted into transverse mode, reducing scalar recovery and extending the tick interval.}
+\label{fig:coherence-comparison}
+\end{figure}
+
+
+
 \subsubsection{Comparison with Special and General Relativity}
 
 Traditional relativity treats time dilation as a relational coordinate effect arising from Lorentz symmetry or curved spacetime geometry. In contrast, QSD derives dilation as a causal, directional delay in phase recovery within a finite-capacity field.
 
 QSD reproduces the predictions of both special and general relativity, but does so by revealing the underlying coherence-based mechanics that generate those effects. There are no coordinate artifacts or fitted terms—only stretch and recovery in a tensioned substrate. In this way, QSD structurally subsumes relativistic frameworks, while offering a falsifiable and physically grounded origin for time itself.
+
+\subsection{QSD Compatibility with Quantum Field Observables}
+
+Although Quantum Substrate Dynamics (QSD) does not reconstruct the full operator-based formalism of quantum field theory (QFT), it reproduces key experimental results that QFT describes—especially those involving time-dependent phenomena. Among these is the well-known lifetime extension of relativistic muons, traditionally derived by applying Lorentz transformations to weak-interaction decay processes within the QFT framework.
+
+In QSD, this same lifetime extension arises causally from the projection of motion into the finite coherence budget of the substrate. The resulting delay in scalar recovery reproduces the exact Lorentz factor observed in high-energy muon decay, without invoking coordinate transformation or invariant geometric assumptions. As detailed in Appendix~\ref{appendix:muon}, this coherence-based dilation emerges from conservation structure alone.
+
+While QSD does not yet formalize field operators, path integrals, or renormalization techniques, it offers a substrate-level origin for quantization and relativistic behavior that QFT currently postulates. This suggests a foundational relationship: since QFT relies on special relativity (SR) for its time evolution—and QSD structurally reproduces SR from coherence projection—it follows that QSD must also align with QFT in its time-dependent predictions. In this view, the route to relativistic timing differs, but the measurable outcomes converge.
+
+\begin{quote}
+\textit{If QFT inherits SR, and QSD structurally reproduces SR, then consistency between QSD and QFT time-dependent predictions is a necessary consequence.}
+\end{quote}
+
+This framing positions QSD not in opposition to QFT, but as a deeper causal substrate from which its temporal predictions naturally emerge. Future work will explore whether field-theoretic constructs such as propagators and commutation relations can also be recovered from QSD’s coherence field geometry and causal pacing.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
@@ -418,6 +482,9 @@ Motion projects into the substrate’s transverse coherence mode, reducing the s
 This equation matches all known relativistic timing phenomena—including GPS satellite drift and muon lifetime extension—when interpreted correctly: while QSD defines dilation as an increase in tick delay \( \tau \), standard relativistic models describe the inverse effect, namely, an increased tick rate. Observational agreement is preserved by taking this inverse relationship into account, and no geometric postulates, coordinate transformations, or fitted terms are required.
 
 This result reinforces and extends the structural logic introduced in prior QSD work, including the derivation of Planck’s constant from coherence dynamics and the emergence of inertia from substrate resistance. Together, these developments form a unified and testable framework in which time, mass, gravity, and quantization arise from causal structure and conservation within a deformable, phase-coherent substrate.
+
+Although QSD does not reconstruct the formal operator machinery of quantum field theory (QFT), it successfully reproduces QFT-aligned timing phenomena—such as relativistic muon decay—through causal substrate geometry. This suggests that QSD offers not only a physical basis for relativistic delay, but also a candidate foundation for quantized field behavior, to be explored in future work.
+
 
 
 
@@ -550,6 +617,7 @@ This factor confirms that orbiting clocks experience faster tick rates than grou
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Muon Lifetime Dilation}
+\label{appendix:muon}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 High-energy muons traveling at relativistic speeds exhibit extended lifetimes consistent with time dilation. Muons produced in the upper atmosphere or circulating in accelerator rings (e.g., CERN, 1977~\cite{bailey-muon}) display a time dilation factor of approximately 22 when moving at \( v \approx 0.999c \), as measured in the lab frame.
