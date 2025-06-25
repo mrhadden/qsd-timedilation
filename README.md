@@ -33,8 +33,8 @@ Quantum Substrate Dynamics (QSD) is a Lorentz-invariant, coherence-based framewo
 
 | File | Description |
 |------|-------------|
-| `QSD_TimeDilation.tex` | Full LaTeX source of the paper |
-| `QSD_TimeDilation.pdf` | Compiled submission-ready PDF |
+| `qsd_dilation.tex` | Full LaTeX source of the paper |
+| `QSD_TimeDilation_PrePrint.pdf` | Compiled submission-ready PDF |
 | `figures/` | Diagrams illustrating coherence projection and gravitational stretch |
 | `README.md` | This file |
 
@@ -46,7 +46,7 @@ Requires a LaTeX installation with the following packages:
 To compile:
 
 ```bash
-pdflatex QSD_TimeDilation.tex
-bibtex QSD_TimeDilation
-pdflatex QSD_TimeDilation.tex
-pdflatex QSD_TimeDilation.tex
+pdflatex qsd_dilation.tex
+bibtex qsd_dilation.tex
+pdflatex qsd_dilation.tex
+pdflatex qsd_dilation.tex
